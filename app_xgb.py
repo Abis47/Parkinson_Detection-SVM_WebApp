@@ -17,13 +17,7 @@ def predict():
     int_features = [float(x) for x in request.form.values()]
     final_features = [np.array(int_features)]
     
-    df = pd.read_csv("data.csv")
-    X = df.drop(["name", "status"], axis=1)
-    y = df["status"]
-    scaler = MinMaxScaler()
-    feature = scaler.fit_transform(X)
-    
-    final_features = scaler.transform(final_features)
+    final_features = scaler.fit_transform(final_features)
     prediction = model.predict(final_features)
     
     output = prediction
