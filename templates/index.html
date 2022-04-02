@@ -21,6 +21,8 @@
 
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
+	<font size="7"> 
+	<p><b>{{ prediction_text }}</b></p>
     	<input type="text" name="MDVP:Fo(Hz)" placeholder="MDVP:Fo(Hz)" required="required" />
         <input type="text" name="MDVP:Fhi(Hz)" placeholder="MDVP:Fhi(Hz)" required="required" />
 		<input type="text" name="MDVP:Flo(Hz)" placeholder="MDVP:Flo(Hz)" required="required" />
@@ -48,8 +50,7 @@
     </form>
 
 
-   <font size="7"> 
-   <p><b>{{ prediction_text }}</b></p>
+
 
  </div>
 
